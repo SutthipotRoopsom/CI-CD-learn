@@ -37,7 +37,8 @@ export default defineConfig((ctx) => {
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-file#build
     build: {
       env: {
-        API_URL: 'https://ch3-1-proxy-server.onrender.com/api'
+        // ✅ อ่านจาก Netlify Environment Variable
+        API_URL: process.env.API_URL || 'http://localhost:3000/api'
       },
       // publicPath: '/',
       vueRouterMode: 'hash', // available values: 'hash', 'history'
